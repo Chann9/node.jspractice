@@ -1,12 +1,25 @@
 //importing modules
-const {person} = require('./personmodel');
+const {Person,creatperson} = require('./personmodel');
+const {people} = require('./people');
 
-const person1 = new Person('Ihsan', 2000, 170, 55, 80);
-console.log(person1);
-person1.getAge();
-console.log(person1.energy);
-person1.walk(20);
-person1.walk(20);
-person1.sleep(8);
-person1.eat(5);
-person1.walk(10);
+console.log(people);
+
+people.push(new Person('dudi',1999,189,70));
+
+for (let i = 0; i < people.length; i++) {
+    const person = people[i];
+    if (person.name === 'ruto') {
+        continue; // melanjutkan ke iterasi berikutnya jika nama ruto ditemukan
+    }
+    if (person.name === 'yanto') {
+        break; // menghentikan iterasi jika nama yanto ditemukan
+    }
+    console.log(`Name: ${person.name} is present.`);
+}
+
+people.push (creatperson({
+    name: 'siti',
+    birthYear: 2002,
+    height: 159,
+    weight: 55,
+}))

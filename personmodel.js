@@ -1,4 +1,6 @@
-class Person{
+const { person } = require("./money");
+
+class Person {
     name;
     birthYear;
     height;
@@ -34,7 +36,17 @@ class Person{
         console.log(`${this.name} eats ${amount} food,`)
         this.energy = this.energy + (amount * 5);
         console.log(`Energy is now ${this.energy}`);
-        }
     }
+}
 
-module.exports = {person}
+function createperson({name,birthYear,height,weight}) {
+    return new person(name,birthYear,height,weight);
+}
+
+
+const ADDRESSES = [
+    'Kp. Benda',
+    'Kp. Bangkongreang',
+    'Kp. Nyangkoek',
+]
+module.exports = { Person }
