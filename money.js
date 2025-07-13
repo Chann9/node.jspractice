@@ -13,42 +13,4 @@ if(sekolah === 'SD') {
     return uangJajan;
 }
 
-const nama ='channn'
-let sekolah ='SD'
-
-let uangJajan = ubahUangJajan(sekolah);
-
-console.log('Nama saya adalah ' + nama);
-console.log('Saya bersekolah di ' + sekolah);
-console.log('uang jajan saya adalah ' + uangJajan);
-
-sekolah = 'SMP';
-
-uangJajan = ubahUangJajan(sekolah)
-
-console.log('uang jajan saya adalah ' + uangJajan)
-
-sekolah = 'SMA';
-
-uangJajan = ubahUangJajan(sekolah)
-
-console.log('uang jajan saya adalah ' + uangJajan)
-
-console.log('----------------------------------------')
-console.log('TIPE DATA OBJECT')
-
-const person ={
-    nama: 'Tika',
-    level: 'SMA',
-    Age: 20,
-    pocketMoney: 0,
-}
-
-person.pocketMoney = ubahUangJajan(person.level);
-
-console.log(person)
- person.level = 'Universitas';
-
- person.pocketMoney = ubahUangJajan(person.level);
-
- module.exports = {person}
+module.exports = {ubahUangJajan}

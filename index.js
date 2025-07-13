@@ -1,5 +1,5 @@
 //importing modules
-const {Person,creatperson} = require('./personmodel');
+const {Person,createPerson} = require('./personmodel');
 const {people} = require('./people');
 
 console.log(people);
@@ -17,7 +17,7 @@ for (let i = 0; i < people.length; i++) {
     console.log(`Name: ${person.name} is present.`);
 }
 
-people.push (creatperson({
+people.push (createPerson({
     name: 'siti',
     birthYear: 2002,
     height: 159,

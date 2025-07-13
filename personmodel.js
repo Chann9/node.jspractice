@@ -1,52 +1,46 @@
-const { person } = require("./money");
-
 class Person {
-    name;
-    birthYear;
-    height;
-    weight;
-    energy = 80;
+  name;
+  birthYear;
+  height;
+  weight;
+  energy = 80;
 
-    constructor(name, birthYear, height, weight, energy) {
-        this.name = name;
-        this.birthYear = birthYear;
-        this.height = height;
-        this.weight = weight;
-        this.energy = energy;
-    }
-    getAge() {
-        const currentYear = new Date().getFullYear();
-        const age = currentYear - this.birthYear;
-        console.log(`${this.name} is ${age} years old1`);
-    }
+  constructor(name, birthYear, height, weight, energy) {
+    this.name = name;
+    this.birthYear = birthYear;
+    this.height = height;
+    this.weight = weight;
+    this.energy = energy;
+  }
+  getAge() {
+    const currentYear = new Date().getFullYear();
+    const age = currentYear - this.birthYear;
+    console.log(`${this.name} is ${age} years old1`);
+  }
 
-    walk(length) {
-        console.log(`${this.name} walks for ${length} km,`)
-        this.energy = this.energy - (length * 2);
-        console.log(`Energy is now ${this.energy}`);
-    };
+  walk(length) {
+    console.log(`${this.name} walks for ${length} km,`);
+    this.energy = this.energy - length * 2;
+    console.log(`Energy is now ${this.energy}`);
+  }
 
-    sleep(duration) {
-        console.log(`${this.name} sleep for ${duration} hours,`)
-        this.energy = this.energy + (duration * 10);
-        console.log(`Energy is now ${this.energy}`);
-    };
+  sleep(duration) {
+    console.log(`${this.name} sleep for ${duration} hours,`);
+    this.energy = this.energy + duration * 10;
+    console.log(`Energy is now ${this.energy}`);
+  }
 
-    eat(amount) {
-        console.log(`${this.name} eats ${amount} food,`)
-        this.energy = this.energy + (amount * 5);
-        console.log(`Energy is now ${this.energy}`);
-    }
+  eat(amount) {
+    console.log(`${this.name} eats ${amount} food,`);
+    this.energy = this.energy + amount * 5;
+    console.log(`Energy is now ${this.energy}`);
+  }
 }
 
-function createperson({name,birthYear,height,weight}) {
-    return new person(name,birthYear,height,weight);
+function createPerson({ name, birthYear, height, weight }) {
+  return new Person(name, birthYear, height, weight);
 }
 
+const ADDRESSES = ["Kp. Benda", "Kp. Bangkongreang", "Kp. Nyangkoek"];
 
-const ADDRESSES = [
-    'Kp. Benda',
-    'Kp. Bangkongreang',
-    'Kp. Nyangkoek',
-]
-module.exports = { Person }
+module.exports = { Person, createPerson };
